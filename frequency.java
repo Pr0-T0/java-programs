@@ -1,22 +1,28 @@
-import java.util.*;
 public class frequency {
-    public static void main(String args[]){
-        int[] a = {1,2,3,2,4,5};
-        Scanner sc = new Scanner(System.in); 
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 2, 3, 1, 5, 6, 7, 7, 1};
 
-        System.out.println("Enter an Integer :");
-        int key = sc.nextInt();
-        int i = 0;
-        int count = 0; 
-        while(i < a.length){
-            if(key == a[i]){
-                count++;
-                i++;
+        // Find the maximum element in the array to determine the size of the frequency array
+        int maxElement = arr[0];
+        for (int num : arr) {
+            if (num > maxElement) {
+                maxElement = num;
             }
-            else    
-                i++;
         }
-        System.out.println("frequency of "+key+ " In the array = "+count);
-        sc.close();
+
+        // Create an array to store element frequencies
+        int[] frequencyArray = new int[maxElement + 1];
+
+        // Calculate element frequencies
+        for (int num : arr) {
+            frequencyArray[num]++;
+        }
+
+        // Print the frequency of each element
+        for (int i = 0; i < frequencyArray.length; i++) {
+            if (frequencyArray[i] > 0) {
+                System.out.println("Element " + i + " occurs " + frequencyArray[i] + " times.");
+            }
+        }
     }
 }
