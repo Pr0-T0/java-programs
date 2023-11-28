@@ -11,7 +11,7 @@ class Employee {
     }
 
     public void printSalary() {
-        System.out.println("The salary is " + this.Salary);
+        System.out.println("Details :\nName : " +this.Name+"\nAge : "+this.Age+"\nPhoneNumber : "+this.PhoneNumber+"\nAddress : "+this.Address+"\nSalary : "+this.Salary);
     }
 }
 
